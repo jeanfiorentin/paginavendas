@@ -8,11 +8,13 @@
 
     <script>
 
-let divA = document.querySelector("dA")
+let divA = document.querySelector("#users")
 
 fetch("pagvendas.json").then((response) => {
     response.json().then((dados) => {
-        console.log(dados.content)
+        dados.content.map((user) => {
+            divA.innerHTML += `<div> ${user.id} </div>`
+        })
     })
 })
 
